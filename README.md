@@ -1,24 +1,44 @@
-# APM - Application Performance Management
+# GraphQL API for IoT Applications
 
-This is a mocking APM (Application Performance Monitoring) implemented into two projects: 
+An oil plant has multiple pressure and temperature gauges installed throughout its facilities to monitor various processes and equipment. The plant management wants to develop an IoT-based system to monitor and track the readings from these gauges in real-time. The goal is to ensure that the pressure and temperature levels are within the desired ranges to maintain the safe and efficient operation of the plant.
 
-1) API Service for serving data to frontend;
-2) Frontend for displaying data pulled from API Service;
+Here's an outline of how the system could be designed using Node.js and GraphQL:
 
-The main goal of this project is to show how to implement a complete isolated frontend and backend services. The frontend UI is a Responsive Single Page Application (SPA) implemented purely with HTML, SCSS and JavaScript. The backend API Service is implemented with Node and Nest.js. Monitoring data is collected and saved to a Redis Database and asyncronously saved to a MongoDB database for API serving. A Nginx server is used to serve the frontend and backend services as a reverse proxy for ochestration and load balancing.
+**1) Device Management:**
 
-The frontend UI is very light and loads fast on the browser. This is good for mobile users as sometimes they have a slow internet connection. As the frontend is a SPA (Single Page Application), the user experience is awesome as he does not need to wait for the page to reload when navigating between pages. Actually the UI HTML markup is completely separated from application logic in the JavaScript code. This is good for maintenance and scalability as the UI can be easily changed without affecting the application logic. Later, to improve performance, a PWA (Progressive Web Application) can be implemented to cache the UI and data on the browser, speeding up the application even more. 
+- Define a Device type in the GraphQL schema to represent a gauge device.
+- Include fields such as id, name, location, type, etc., to provide relevant information about each gauge.
+- Implement resolvers to retrieve the device details, including their readings.
 
-You can sse that there is no `index.html` on the root of the dashboard project. Actually, the `index.html ` is created automatically by `webpack` on the build step. Anyway, if you open the `index.html` in the `dist` folder under the project's root, you will see an empty body tag. Unfortunately we still need an `html` file to initiate the application on the browser. From the `body` tag bellow everything is created dynamically by the JavaScript code starting from `index.js` file. By combining the DOM manipulation and webpack capabilities, we can create a very light and fast application, separating the UI from the application logic and integrating the UI only where it is needed. 
+**2) Real-time Data Acquisition:**
 
-http://apm.orionsoft.site/
+- Integrate IoT devices (pressure and temperature gauges) with a data acquisition system.
+- Use appropriate protocols (e.g., MQTT) to collect readings from the gauges periodically.
+- Store the gauge readings in a database or in-memory data store for further processing and retrieval.
 
+**3) GraphQL API for Gauge Readings:**
 
+- Define a Reading type in the GraphQL schema to represent the gauge readings.
+- Include fields such as id, deviceId, timestamp, pressure, temperature, etc.
+- Implement resolvers to retrieve the latest readings for each gauge, as well as historical data.
 
-## Getting Started
+**4) Real-time Monitoring and Alerts:**
 
-...
-### Prerequisites
+- Develop a real-time monitoring component to analyze the gauge readings.
+- Set up thresholds or ranges for pressure and temperature values to determine if they are within acceptable limits.
+- Implement a mechanism to trigger alerts or notifications (e.g., email, SMS, push notifications) when a gauge reading exceeds the defined thresholds.
 
-...
+**5) GraphQL Subscriptions for Real-time Updates:**
 
+- Utilize GraphQL subscriptions to enable real-time updates and push notifications to clients.
+- Subscriptions can be used to receive updates whenever there is a new gauge reading or an alert is triggered.
+
+**6) Dashboard and Visualization:**
+
+- Develop a web-based dashboard or visualization tool to display the gauge readings and their status.
+- Utilize GraphQL queries to fetch the necessary data from the backend and present it in a user-friendly format.
+- Implement interactive charts, graphs, and visualizations to provide an intuitive overview of the pressure and temperature levels.
+
+**Conclusion**
+
+By following this approach, the oil plant can effectively monitor the pressure and temperature gauges in real-time, detect anomalies, and respond promptly to any critical situations. The GraphQL API provides a flexible and efficient way to retrieve gauge data, subscribe to real-time updates, and integrate with frontend applications or other systems within the plant's infrastructure.
