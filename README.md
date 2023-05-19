@@ -4,12 +4,13 @@ An oil plant has multiple pressure and temperature gauges installed throughout i
 
 Here's an outline of how the system could be designed using Node.js and GraphQL:
 
-Device Management:
+**1) Device Management:**
 
-Define a Device type in the GraphQL schema to represent a gauge device.
-Include fields such as id, name, location, type, etc., to provide relevant information about each gauge.
-Implement resolvers to retrieve the device details, including their readings.
-Real-time Data Acquisition:
+- Define a Device type in the GraphQL schema to represent a gauge device.
+- Include fields such as id, name, location, type, etc., to provide relevant information about each gauge.
+- Implement resolvers to retrieve the device details, including their readings.
+
+**2)Real-time Data Acquisition:**
 
 Integrate IoT devices (pressure and temperature gauges) with a data acquisition system.
 Use appropriate protocols (e.g., MQTT) to collect readings from the gauges periodically.
