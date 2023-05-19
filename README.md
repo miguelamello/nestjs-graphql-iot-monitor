@@ -10,28 +10,36 @@ Here's an outline of how the system could be designed using Node.js and GraphQL:
 - Include fields such as id, name, location, type, etc., to provide relevant information about each gauge.
 - Implement resolvers to retrieve the device details, including their readings.
 
-**2)Real-time Data Acquisition:**
+**2) Real-time Data Acquisition:**
 
-Integrate IoT devices (pressure and temperature gauges) with a data acquisition system.
-Use appropriate protocols (e.g., MQTT) to collect readings from the gauges periodically.
-Store the gauge readings in a database or in-memory data store for further processing and retrieval.
-GraphQL API for Gauge Readings:
+- Integrate IoT devices (pressure and temperature gauges) with a data acquisition system.
+- Use appropriate protocols (e.g., MQTT) to collect readings from the gauges periodically.
+- Store the gauge readings in a database or in-memory data store for further processing and retrieval.
 
-Define a Reading type in the GraphQL schema to represent the gauge readings.
-Include fields such as id, deviceId, timestamp, pressure, temperature, etc.
-Implement resolvers to retrieve the latest readings for each gauge, as well as historical data.
-Real-time Monitoring and Alerts:
+**3) GraphQL API for Gauge Readings:**
 
-Develop a real-time monitoring component to analyze the gauge readings.
-Set up thresholds or ranges for pressure and temperature values to determine if they are within acceptable limits.
-Implement a mechanism to trigger alerts or notifications (e.g., email, SMS, push notifications) when a gauge reading exceeds the defined thresholds.
-GraphQL Subscriptions for Real-time Updates:
+- Define a Reading type in the GraphQL schema to represent the gauge readings.
+- Include fields such as id, deviceId, timestamp, pressure, temperature, etc.
+- Implement resolvers to retrieve the latest readings for each gauge, as well as historical data.
 
-Utilize GraphQL subscriptions to enable real-time updates and push notifications to clients.
-Subscriptions can be used to receive updates whenever there is a new gauge reading or an alert is triggered.
-Dashboard and Visualization:
+**4) Real-time Monitoring and Alerts:**
 
-Develop a web-based dashboard or visualization tool to display the gauge readings and their status.
-Utilize GraphQL queries to fetch the necessary data from the backend and present it in a user-friendly format.
-Implement interactive charts, graphs, and visualizations to provide an intuitive overview of the pressure and temperature levels.
+- Develop a real-time monitoring component to analyze the gauge readings.
+- Set up thresholds or ranges for pressure and temperature values to determine if they are within acceptable limits.
+- Implement a mechanism to trigger alerts or notifications (e.g., email, SMS, push notifications) when a gauge reading exceeds the defined thresholds.
+
+**5) GraphQL Subscriptions for Real-time Updates:**
+
+- Utilize GraphQL subscriptions to enable real-time updates and push notifications to clients.
+- Subscriptions can be used to receive updates whenever there is a new gauge reading or an alert is triggered.
+
+**6) Dashboard and Visualization:**
+
+- Develop a web-based dashboard or visualization tool to display the gauge readings and their status.
+- Utilize GraphQL queries to fetch the necessary data from the backend and present it in a user-friendly format.
+- Implement interactive charts, graphs, and visualizations to provide an intuitive overview of the pressure and temperature levels.
+
+**Conclusion**
+
 By following this approach, the oil plant can effectively monitor the pressure and temperature gauges in real-time, detect anomalies, and respond promptly to any critical situations. The GraphQL API provides a flexible and efficient way to retrieve gauge data, subscribe to real-time updates, and integrate with frontend applications or other systems within the plant's infrastructure.
+
