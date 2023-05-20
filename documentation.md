@@ -49,7 +49,7 @@ and to get the data you want. Continue reading to learn how to use the schema.
 
 ```
   type Device {
-    id: String
+    id: String 
     name: String
     location: String
     type: String
@@ -60,6 +60,10 @@ and to get the data you want. Continue reading to learn how to use the schema.
     deviceById(id: String): Device
     deviceByName(name: String): Device
     devicesByName(name: String): [Device]
+    deviceTypes: [String]
+    devicesByType(type: String): [Device]
+    deviceLocations: [String]
+    devicesByLocation(location: String): [Device]
   }
 ```
 
@@ -75,18 +79,22 @@ that you can use to get the data you want.
 
 The following methods exists for querying the API:
 
-* deviceById
-* deviceByName
-* devicesByName
+1) deviceById
+2) deviceByName
+3) devicesByName
+4) deviceTypes
+5) devicesByType
+6) deviceLocations
+7) devicesByLocation
 
-### Query: deviceById
+### 1) deviceById
 This query is used to get a device by its id. The query requires the id of the 
 device as an argument. The query returns a device object if the device is found 
 or null if the device is not found. 
 
 #### Examples
 
-1) Querying a device by its id and returning all the fields of the device:
+1.1) Querying a device by its id and returning all the fields of the device:
 
 ```
   query {
@@ -115,7 +123,7 @@ The response will be:
   }
 ```
 
-2) Querying a device by its id and returning only the name and location fields:
+1.2) Querying a device by its id and returning only the name and location fields:
 
 ```
   query {
@@ -139,14 +147,14 @@ The response will be:
   }
 ```
 
-### Query: deviceByName
+### 2) deviceByName
 This query is used to get a device by its name. The query requires the name of 
 the device as an argument. The query returns a device object if the device is 
 found or null if the device is not found.
 
 #### Examples
 
-1) Querying a device by its name and returning all the fields of the device:
+2.1) Querying a device by its name and returning all the fields of the device:
 
 ```
   query {
@@ -177,14 +185,14 @@ The response will be:
   }
 ```
 
-### Query: devicesByName
+### 3) devicesByName
 This query is used to get all the devices that match a name. The query requires 
 the name of the devices as an argument. The query returns an array of devices 
 that match the name or an empty array if no device is found.
 
 #### Examples
 
-1) Querying all the devices that match a name and returning all the fields of 
+3.1) Querying all the devices that match a name and returning all the fields of 
 the devices:
 
 ```
@@ -225,6 +233,178 @@ The response will be:
           "location": "Sector 1-F",
           "type": "Pressure",
           "created": "2023-05-14T18:23:48-03:00"
+        }
+      ]
+    }
+  }
+```
+
+### 4) deviceTypes
+This query is used to get all the device types. The query requires no arguments.
+The query returns an array of device types. 
+
+#### Examples
+
+4.1) Querying all the device types:
+
+```
+  query {
+    deviceTypes
+  }
+```
+
+The response will be:
+
+```
+  {
+    "data": {
+      "deviceTypes": [
+        "Pressure",
+        "Temperature",
+        "Humidity",
+      ]
+    }
+  }
+```
+
+### 5) devicesByType
+This query is used to get all the devices that match a type. The query requires 
+the type of the devices as an argument. The query returns an array of devices 
+that match the type or an empty array if no device is found. 
+
+#### Examples
+
+5.1) Querying all the devices that match a type and returning all the fields of 
+the devices:
+
+```
+  query {
+    devicesByType( type: "Pressure") {
+      id
+      name
+      location
+      type
+      created
+    }
+  }
+```
+
+The response will be:
+
+```
+  {
+    "data": {
+      "devicesByType": [
+        {
+          "id": "646825582e1d2015648b3aa1",
+          "name": "Norland-S3D",
+          "location": "Sector 3-D",
+          "type": "Pressure",
+          "created": "2023-05-07T18:23:48-03:00"
+        },
+        {
+          "id": "646826962e1d2015648b3aa2",
+          "name": "Norland",
+          "location": "Sector 44-A",
+          "type": "Pressure",
+          "created": "2023-05-02T18:23:48-03:00"
+        },
+        {
+          "id": "6468271d2e1d2015648b3aa3",
+          "name": "Norland",
+          "location": "Sector 1-F",
+          "type": "Pressure",
+          "created": "2023-05-14T18:23:48-03:00"
+        }
+      ]
+    }
+  }
+```
+
+### 6) devicesLocations
+This query is used to get all the devices locations. The query requires no 
+arguments. The query returns an array of devices locations. 
+
+#### Examples
+
+6.1) Querying all the devices locations:
+
+```
+  query {
+    devicesLocations
+  }
+```
+
+The response will be:
+
+```
+  {
+    "data": {
+      "devicesLocations": [
+        "Sector 1-A",
+        "Sector 1-B",
+        "Sector 1-C",
+        "Sector 1-F",
+        "Sector 2-A",
+        "Sector 2-B",
+        "Sector 22-K",
+        "Sector 3-A",
+        "Sector 3-D",
+        "Sector 4-B",
+        "Sector 4-C",
+        "Sector 4-D",
+        "Sector 44-A",
+        "Sector 5-D",
+        "Sector 6-C",
+        "Sector 6-D",
+        "Sector 7-A",
+        "Sector 7-C"
+      ]
+    }
+  }
+```
+
+### 7) devicesByLocation
+This query is used to get all the devices that match a location. The query 
+requires the location of the devices as an argument. The query returns an array 
+of devices that match the location or an empty array if no device is found.
+
+#### Examples
+
+7.1) Querying all the devices that match a location and returning all the fields 
+of the devices:
+
+```
+  query {
+    devicesByLocation( location: "Sector 5-D") {
+      id
+      name
+      location
+      type
+      created
+    }
+  }
+```
+
+The response will be:
+
+```
+  {
+    "data": {
+      "devicesByLocation": [
+        {
+          "id": "646825582e1d2015648b3aa5",
+          "name": "Eclipse-W2D",
+          "location": "Sector 5-D",
+          "type": "Temperature",
+          "created": "2023-05-11T12:10:41-03:00"
+        },
+        {
+          "id": "646825582e1d2015648b3ab1",
+          "name": "Galaxy-T3D",
+          "location": "Sector 5-D",
+          "type": "Pressure",
+          "created": "2023-05-23T13:55:56-03:00"
         }
       ]
     }

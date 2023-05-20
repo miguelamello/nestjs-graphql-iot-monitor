@@ -21,4 +21,20 @@ export class DevicesService {
     return this.deviceModel.find({ name: { $regex: regex } });
   }
 
+  async deviceTypes(): Promise<string[]> {
+    return this.deviceModel.distinct('type');
+  }
+
+  async devicesByType(type: string): Promise<Device[]> {
+    return this.deviceModel.find({ type: type });
+  }
+
+  async deviceLocations(): Promise<string[]> {
+    return this.deviceModel.distinct('location');
+  }
+
+  async devicesByLocation(location: string): Promise<Device[]> {
+    return this.deviceModel.find({ location: location });
+  }
+
 }

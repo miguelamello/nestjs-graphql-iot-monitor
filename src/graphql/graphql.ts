@@ -22,6 +22,14 @@ export abstract class IQuery {
     abstract deviceByName(name?: Nullable<string>): Nullable<Device> | Promise<Nullable<Device>>;
 
     abstract devicesByName(name?: Nullable<string>): Nullable<Nullable<Device>[]> | Promise<Nullable<Nullable<Device>[]>>;
+
+    abstract deviceTypes(): Nullable<Nullable<string>[]> | Promise<Nullable<Nullable<string>[]>>;
+
+    abstract devicesByType(type?: Nullable<string>): Nullable<Nullable<Device>[]> | Promise<Nullable<Nullable<Device>[]>>;
+
+    abstract deviceLocations(): Nullable<Nullable<string>[]> | Promise<Nullable<Nullable<string>[]>>;
+
+    abstract devicesByLocation(location?: Nullable<string>): Nullable<Nullable<Device>[]> | Promise<Nullable<Nullable<Device>[]>>;
 }
 
 type Nullable<T> = T | null;

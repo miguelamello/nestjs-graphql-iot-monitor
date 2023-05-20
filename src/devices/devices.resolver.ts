@@ -22,10 +22,25 @@ export class DevicesResolver {
     return this.devicesService.devicesByName(name);
   }
 
-  /*@ResolveField()
-  async posts(@Parent() author) {
-    const { id } = author;
-    return this.postsService.findAll({ authorId: id });
-  }*/
+  @Query()
+  async deviceTypes() {
+    return this.devicesService.deviceTypes();
+  }
+
+  @Query()
+  async devicesByType(@Args('type') type: string) {
+    return this.devicesService.devicesByType(type);
+  }
+
+  @Query()
+  async deviceLocations() {
+    return this.devicesService.deviceLocations();
+  }
+ 
+  @Query()
+  async devicesByLocation(@Args('location') location: string) {
+    return this.devicesService.devicesByLocation(location);
+  }
+
 }
 
