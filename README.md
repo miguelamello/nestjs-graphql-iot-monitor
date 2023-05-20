@@ -2,7 +2,7 @@
 
 An oil plant has multiple pressure and temperature gauges installed throughout its facilities to monitor various processes and equipment. The plant management wants to develop an IoT-based system to monitor and track the readings from these gauges in real-time. The goal is to ensure that the pressure and temperature levels are within the desired ranges to maintain the safe and efficient operation of the plant.
 
-[API Documentation](./docs/my_document.pdf)
+[API Documentation](https://github.com/miguelamello/graphql/blob/main/documentaion.md)
 
 Here's an outline of how the system could be designed using Node.js and GraphQL:
 
