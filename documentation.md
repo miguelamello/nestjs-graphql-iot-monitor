@@ -47,7 +47,7 @@ No authentication is required to use this API.
 The API provides a schema described below. The schema is used to query the API 
 and to get the data you want. Continue reading to learn how to use the schema.
 
-`
+```
   type Device {
     id: String
     name: String
@@ -61,7 +61,7 @@ and to get the data you want. Continue reading to learn how to use the schema.
     deviceByName(name: String): Device
     devicesByName(name: String): [Device]
   }
-`
+```
 
 Note: A playground is provided to test the API. The playground can be accessed 
 by clicking on the following link in any browser:
