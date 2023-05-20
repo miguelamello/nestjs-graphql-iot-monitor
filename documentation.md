@@ -17,7 +17,7 @@ Production server: `http://devices.orionsoft.site/graphql`<br>
 Development server: `http://localhost:3000/graphql`
 
 ## Endpoints
-The API provides the following endpoints:
+The API provides a unique endpoint at:
 
 `/graphql`
 
