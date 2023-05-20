@@ -13,7 +13,7 @@ compatible.
 ## Servers
 The API is hosted on the following servers:
 
-Production server: `http://devices.orionsoft.site/graphql`
+Production server: `http://devices.orionsoft.site/graphql`<br>
 Development server: `http://localhost:3000/graphql`
 
 ## Endpoints
