@@ -98,7 +98,7 @@ or null if the device is not found.
 
 ```
   query {
-    device( id: "646825582e1d2015648b3aa1") {
+    deviceById( id: "646825582e1d2015648b3aa1") {
       id
       name
       location
