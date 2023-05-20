@@ -73,6 +73,12 @@ The beauty of GraphQL is that you can query the API to get the data you want.
 Look at the schema above and you will see that the API provides three queries 
 that you can use to get the data you want.
 
+The following methods exists for querying the API:
+
+* deviceById
+* deviceByName
+* devicesByName
+
 ### Query: deviceById
 This query is used to get a device by its id. The query requires the id of the 
 device as an argument. The query returns a device object if the device is found 
