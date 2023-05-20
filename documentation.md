@@ -183,7 +183,7 @@ the devices:
 
 ```
   query {
-    devicesByName( name: "Norland-S3D") {
+    devicesByName( name: "Norland") {
       id
       name
       location
