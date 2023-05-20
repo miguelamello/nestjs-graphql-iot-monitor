@@ -1,0 +1,13 @@
+type Device {
+  id: String, 
+  name: String
+  location: String
+  type: String
+  created: String
+}
+
+type Query {
+  deviceById(id: String): Device
+  deviceByName(name: String): Device
+  devicesByName(name: String): [Device]
+}
