@@ -74,7 +74,7 @@ by clicking on the following link in any browser:
 
 ## Querying
 The beauty of GraphQL is that you can query the API to get the data you want. 
-Look at the schema above and you will see that the API provides three queries 
+Look at the schema above and you will see that the API provides seven queries 
 that you can use to get the data you want.
 
 The following methods exists for querying the API:
