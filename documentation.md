@@ -44,7 +44,7 @@ The API requires the following headers:
 No authentication is required to use this API.
 
 ## Schema
-The API provides a schema described below. The schema is used to query the API 
+The API provides the schema described below. The schema is used to query the API 
 and to get the data you want. Continue reading to learn how to use the schema.
 
 ```
@@ -68,5 +68,159 @@ by clicking on the following link in any browser:
 
 `http://devices.orionsoft.site/graphql`
 
+## Querying
+The beauty of GraphQL is that you can query the API to get the data you want. 
+Look at the schema above and you will see that the API provides three queries 
+that you can use to get the data you want.
 
+### Query: deviceById
+This query is used to get a device by its id. The query requires the id of the 
+device as an argument. The query returns a device object if the device is found 
+or null if the device is not found. 
 
+#### Examples
+
+1) Querying a device by its id and returning all the fields of the device:
+
+```
+  query {
+    device( id: "646825582e1d2015648b3aa1") {
+      id
+      name
+      location
+      type
+      created
+    }
+  }
+```
+The response will be:
+
+```
+  {
+    "data": {
+      "device": {
+        "id": "646825582e1d2015648b3aa1",
+        "name": "Norland-S3D",
+        "location": "Norland",
+        "type": "S3D",
+        "created": "2019-01-23T00:00:00.000Z"
+      }
+    }
+  }
+```
+
+2) Querying a device by its id and returning only the name and location fields:
+
+```
+  query {
+    device( id: "646825582e1d2015648b3aa1") {
+      name
+      location
+    }
+  }
+```
+
+The response will be:
+
+```
+  {
+    "data": {
+      "device": {
+        "name": "Norland-S3D",
+        "location": "Norland"
+      }
+    }
+  }
+```
+
+### Query: deviceByName
+This query is used to get a device by its name. The query requires the name of 
+the device as an argument. The query returns a device object if the device is 
+found or null if the device is not found.
+
+#### Examples
+
+1) Querying a device by its name and returning all the fields of the device:
+
+```
+  query {
+    deviceByName( name: "Norland-S3D") {
+      id
+      name
+      location
+      type
+      created
+    }
+  }
+```
+Note: The name of the device is case sensitive.
+
+The response will be:
+
+```
+  {
+    "data": {
+      "deviceByName": {
+        "id": "646825582e1d2015648b3aa1",
+        "name": "Norland-S3D",
+        "location": "Norland",
+        "type": "S3D",
+        "created": "2019-01-23T00:00:00.000Z"
+      }
+    }
+  }
+```
+
+### Query: devicesByName
+This query is used to get all the devices that match a name. The query requires 
+the name of the devices as an argument. The query returns an array of devices 
+that match the name or an empty array if no device is found.
+
+#### Examples
+
+1) Querying all the devices that match a name and returning all the fields of 
+the devices:
+
+```
+  query {
+    devicesByName( name: "Norland-S3D") {
+      id
+      name
+      location
+      type
+      created
+    }
+  }
+```
+
+The response will be:
+
+```
+  {
+    "data": {
+      "devicesByName": [
+        {
+          "id": "646825582e1d2015648b3aa1",
+          "name": "Norland-S3D",
+          "location": "Sector 3-D",
+          "type": "Pressure",
+          "created": "2023-05-07T18:23:48-03:00"
+        },
+        {
+          "id": "646826962e1d2015648b3aa2",
+          "name": "Norland",
+          "location": "Sector 44-A",
+          "type": "Pressure",
+          "created": "2023-05-02T18:23:48-03:00"
+        },
+        {
+          "id": "6468271d2e1d2015648b3aa3",
+          "name": "Norland",
+          "location": "Sector 1-F",
+          "type": "Pressure",
+          "created": "2023-05-14T18:23:48-03:00"
+        }
+      ]
+    }
+  }
+```
