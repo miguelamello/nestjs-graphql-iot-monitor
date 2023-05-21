@@ -13,6 +13,6 @@ type Query {
   devicesByName(name: String): [Device]
   deviceTypes: [String]
   devicesByType(type: String): [Device]
-  deviceLocations: [String]
+  devicesLocations: [String]
   devicesByLocation(location: String): [Device]
 }

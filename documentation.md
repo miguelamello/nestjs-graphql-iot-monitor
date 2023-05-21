@@ -125,7 +125,7 @@ The response will be:
   }
 ```
 
-![devicesById.png](https://github.com/miguelamello/graphql/blob/main/images/devicesById.png)
+![deviceById.png](https://github.com/miguelamello/graphql/blob/main/images/deviceById.png)
 
 1.2) Querying a device by its id and returning only the name and location fields:
 
@@ -151,7 +151,7 @@ The response will be:
   }
 ```
 
-![devicesById(1).png](https://github.com/miguelamello/graphql/blob/main/images/devicesById(1).png)
+![deviceById(1).png](https://github.com/miguelamello/graphql/blob/main/images/deviceById(1).png)
 ### 2) deviceByName
 This query is used to get a device by its name. The query requires the name of 
 the device as an argument. The query returns a device object if the device is 

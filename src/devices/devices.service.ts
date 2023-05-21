@@ -26,10 +26,10 @@ export class DevicesService {
   }
 
   async devicesByType(type: string): Promise<Device[]> {
-    return this.deviceModel.find({ type: type });
+    return this.deviceModel.find({ type: type }); 
   }
 
-  async deviceLocations(): Promise<string[]> {
+  async devicesLocations(): Promise<string[]> {
     return this.deviceModel.distinct('location');
   }
 

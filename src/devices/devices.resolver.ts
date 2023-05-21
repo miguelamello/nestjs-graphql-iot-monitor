@@ -33,8 +33,8 @@ export class DevicesResolver {
   }
 
   @Query()
-  async deviceLocations() {
-    return this.devicesService.deviceLocations();
+  async devicesLocations() {
+    return this.devicesService.devicesLocations();
   }
  
   @Query()
