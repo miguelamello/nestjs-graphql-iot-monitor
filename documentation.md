@@ -81,13 +81,13 @@ that you can use to get the data you want.
 
 The following methods exists for querying the API:
 
-1) deviceById
-2) deviceByName
-3) devicesByName
-4) deviceTypes
-5) devicesByType
-6) deviceLocations
-7) devicesByLocation
+1) [deviceById](#1-devicebyid)
+2) [deviceByName](#2-devicebyname)
+3) [devicesByName](#3-devicesbyname)
+4) [deviceTypes](#4-devicetypes)
+5) [devicesByType](#5-devicesbytype)
+6) [deviceLocations](#6-devicelocations)
+7) [devicesByLocation](#7-devicesbylocation)
 
 ### 1) deviceById
 This query is used to get a device by its id. The query requires the id of the 
