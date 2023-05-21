@@ -13,13 +13,15 @@ compatible.
 ## Servers
 The API is hosted on the following servers:
 
-Production server: `http://orionsoft.site/graphql`<br>
-Development server: `http://localhost:3000/graphql`
+Production server: `http://graphql.orionsoft.site`<br>
+Development server: `http://localhost:3030/graphql`
 
 ## Endpoints
-The API provides a unique endpoint at:
+Differently from REST APIs, GraphQL APIs have only one endpoint where all the 
+requests are sent. The endpoint for this API is:
 
-`/graphql`
+Remote endoint: `http://graphql.orionsoft.site`<br>
+Local endpoint: `http://localhost:3030/graphql`
 
 ### Methods
 The API provides only one method: `POST`
@@ -98,7 +100,7 @@ or null if the device is not found.
 
 ```
   query {
-    deviceById( id: "646825582e1d2015648b3aa1") {
+    deviceById( id: "64697500582615bda4581f6b") {
       id
       name
       location
@@ -113,7 +115,7 @@ The response will be:
   {
     "data": {
       "device": {
-        "id": "646825582e1d2015648b3aa1",
+        "id": "64697500582615bda4581f6b",
         "name": "Norland-S3D",
         "location": "Norland",
         "type": "S3D",
@@ -123,11 +125,13 @@ The response will be:
   }
 ```
 
+![Alt Text](image_url)
+
 1.2) Querying a device by its id and returning only the name and location fields:
 
 ```
   query {
-    device( id: "646825582e1d2015648b3aa1") {
+    device( id: "64697500582615bda4581f6b") {
       name
       location
     }
