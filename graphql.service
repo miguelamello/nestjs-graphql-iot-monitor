@@ -1,0 +1,28 @@
+#
+# Systemd service configuration file for the graphql service. 
+# Under Unix/Linux servers that use Systemd, it's a great 
+# way to configure the service.
+# 
+# Usage: 
+# systemdctl status graphql
+# systemdctl start graphql
+# systemdctl stop graphql
+# systemdctl restart graphql
+#
+
+[Unit]
+Description=graphql
+
+[Service] 
+User=webmaster
+Group=webmaster
+WorkingDirectory=/home/webmaster/graphql
+Environment=NODE_ENV=production
+ExecStart=/usr/local/bin/node /home/webmaster/graphql/dist/main.js
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+
+
