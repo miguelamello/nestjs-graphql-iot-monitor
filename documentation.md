@@ -125,7 +125,7 @@ The response will be:
   }
 ```
 
-![Alt Text]('https://github.com/miguelamello/graphql/blob/main/images/devicesById.png')
+![devicesById.png](https://github.com/miguelamello/graphql/blob/main/images/devicesById.png)
 
 1.2) Querying a device by its id and returning only the name and location fields:
 
