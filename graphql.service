@@ -18,7 +18,7 @@ User=webmaster
 Group=webmaster
 WorkingDirectory=/home/webmaster/graphql
 Environment=NODE_ENV=production
-ExecStart=/usr/local/bin/node /home/webmaster/graphql/dist/main.js
+ExecStart=node /home/webmaster/graphql/dist/main.js
 Restart=always
 
 [Install]

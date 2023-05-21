@@ -16,10 +16,7 @@ import { DevicesModule } from './devices/devices.module';
         outputAs: 'class'
       },
     }),
-    MongooseModule.forRoot('mongodb://localhost:27017/graphql', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }),
+    MongooseModule.forRoot('mongodb://127.0.0.1:27017/graphql'),
     DevicesModule,
   ],
   controllers: [AppController],
