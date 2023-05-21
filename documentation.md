@@ -151,6 +151,7 @@ The response will be:
   }
 ```
 
+![devicesById(1).png](https://github.com/miguelamello/graphql/blob/main/images/devicesById(1).png)
 ### 2) deviceByName
 This query is used to get a device by its name. The query requires the name of 
 the device as an argument. The query returns a device object if the device is 
@@ -325,6 +326,7 @@ The response will be:
   }
 ```
 
+![devicesByType.png](https://github.com/miguelamello/graphql/blob/main/images/devicesByType.png)
 ### 6) devicesLocations
 This query is used to get all the devices locations. The query requires no 
 arguments. The query returns an array of devices locations. 
