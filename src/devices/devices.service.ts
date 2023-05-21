@@ -13,7 +13,7 @@ export class DevicesService {
   }
 
   async deviceByName(name: string): Promise<Device> {
-    return this.deviceModel.findOne({ name: name });
+    return this.deviceModel.findOne({ name: name }); 
   }
 
   async devicesByName(name: string): Promise<Device[]> {

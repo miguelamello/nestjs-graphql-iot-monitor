@@ -49,7 +49,7 @@ and to get the data you want. Continue reading to learn how to use the schema.
 
 ```
   type Device {
-    id: String 
+    id: ID 
     name: String
     location: String
     type: String
@@ -57,7 +57,7 @@ and to get the data you want. Continue reading to learn how to use the schema.
   }
 
   type Query {
-    deviceById(id: String): Device
+    deviceById(id: ID): Device
     deviceByName(name: String): Device
     devicesByName(name: String): [Device]
     deviceTypes: [String]

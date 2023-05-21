@@ -9,7 +9,7 @@ import { DevicesModule } from './devices/devices.module';
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
-      driver: ApolloDriver,
+      driver: ApolloDriver, 
       typePaths: ['./**/*.graphql'],
       definitions: {
         path: join(process.cwd(), 'src/graphql/graphql.ts'),

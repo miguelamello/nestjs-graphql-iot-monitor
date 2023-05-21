@@ -1,6 +1,6 @@
 
 type Device {
-  id: String 
+  id: ID 
   name: String
   location: String
   type: String
@@ -8,7 +8,7 @@ type Device {
 }
 
 type Query {
-  deviceById(id: String): Device
+  deviceById(id: ID): Device
   deviceByName(name: String): Device
   devicesByName(name: String): [Device]
   deviceTypes: [String]

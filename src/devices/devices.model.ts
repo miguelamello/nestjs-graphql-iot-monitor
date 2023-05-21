@@ -11,7 +11,7 @@ export class Device extends Document {
   name: string
 
   @Field() 
-  @Prop({ required: true }) 
+  @Prop({ required: true })  
   location: string
 
   @Field()
