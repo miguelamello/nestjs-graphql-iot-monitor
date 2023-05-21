@@ -190,6 +190,7 @@ The response will be:
   }
 ```
 
+![deviceByName.png](https://github.com/miguelamello/graphql/blob/main/images/deviceByName.png)
 ### 3) devicesByName
 This query is used to get all the devices that match a name. The query requires 
 the name of the devices as an argument. The query returns an array of devices 
@@ -244,6 +245,7 @@ The response will be:
   }
 ```
 
+![devicesByName.png](https://github.com/miguelamello/graphql/blob/main/images/devicesByName.png)
 ### 4) deviceTypes
 This query is used to get all the device types. The query requires no arguments.
 The query returns an array of device types. 
@@ -271,6 +273,8 @@ The response will be:
     }
   }
 ```
+
+![deviceTypes.png](https://github.com/miguelamello/graphql/blob/main/images/deviceTypes.png)
 
 ### 5) devicesByType
 This query is used to get all the devices that match a type. The query requires 
@@ -327,6 +331,7 @@ The response will be:
 ```
 
 ![devicesByType.png](https://github.com/miguelamello/graphql/blob/main/images/devicesByType.png)
+
 ### 6) devicesLocations
 This query is used to get all the devices locations. The query requires no 
 arguments. The query returns an array of devices locations. 
@@ -369,6 +374,8 @@ The response will be:
     }
   }
 ```
+
+![devicesLocations.png](https://github.com/miguelamello/graphql/blob/main/images/devicesLocations.png)
 
 ### 7) devicesByLocation
 This query is used to get all the devices that match a location. The query 
@@ -416,3 +423,6 @@ The response will be:
     }
   }
 ```
+
+![devicesByLocation.png](https://github.com/miguelamello/graphql/blob/main/images/devicesByLocation.png)
+
