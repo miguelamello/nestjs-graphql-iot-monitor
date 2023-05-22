@@ -69,11 +69,6 @@ and to get the data you want. Continue reading to learn how to use the schema.
   }
 ```
 
-Note: A playground is provided to test the API. The playground can be accessed 
-by clicking on the following link in any browser:
-
-`http://devices.orionsoft.site/graphql`
-
 ## Querying
 The beauty of GraphQL is that you can query the API to get the data you want. 
 Look at the schema above and you will see that the API provides seven queries 
