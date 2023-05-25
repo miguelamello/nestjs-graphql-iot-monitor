@@ -1,4 +1,4 @@
-# API Documentaion For Devices Monitoring
+# API Documentation For Devices Monitoring
 
 ## Description
 This API documentation provides information about the functionality of the 
